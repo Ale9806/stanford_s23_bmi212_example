@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 
 def mandelbrot(h, w, x=-0.5, y=0, z=1, mi=100):
     xw = 1.5
-    yh = 1.5*h/w
+    yh = 1.5*h/w-mi
     x_from = x - xw/z
     x_to = x + xw/z
     y_from = y - yh/z
@@ -36,5 +36,5 @@ except* IndexError:
 
 plt.imsave('out.jpg', mandelbrot(int(sys.argv[1]), int(sys.argv[2])), cmap='magma')
 m = mahotas.imread('out.jpg')
-pylab.imshow(m)
-pylab.show()
+plt.imshow(m)
+plt.show()

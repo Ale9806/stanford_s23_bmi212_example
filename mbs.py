@@ -4,10 +4,12 @@ import mahotas
 import pylab
 import numpy as np
 import sys
-
 import matplotlib.pyplot as plt
 
-def mandelbrot(h, w, x=-0.5, y=0, z=1, mi=100):
+def mandelbrot(h:int, w:int, x:float=-0.5, y:float=0, z:int=1, mi:int=100):
+    """
+    Creats a numpy array with the hth and wth Mandelbrot's elements
+    """
     xw = 1.5
     yh = 1.5*h/w-mi
     x_from = x - xw/z
